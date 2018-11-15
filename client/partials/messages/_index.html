@@ -1,0 +1,26 @@
+<div>
+   <h1>Your Wall Looks Epic, {{userName}}!</h1>
+   <button type="button" name="button" ng-click='logout()'>Logout</button>
+</div>
+<form ng-submit='addMessage()'>
+   Post a message: <p><textarea name="message" ng-model='newMessage'></textarea></p>
+   <button type="submit" name="button">Post a message</button>
+</form>
+<hr>
+<ul ng-init='index()' ng-if='messages'>
+   <li ng-repeat="message in messages | orderBy:'message.createdAt':true">
+      <p>Message: {{message.message}}</p>
+      <p>Username: {{message._user.name.first}} {{message._user.name.last}}</p>
+      <p>Created At: {{message.createdAt}}</p>
+      <ul ng-if='message._comments.length>0' >
+         <li ng-repeat="comment in message._comments">
+            <p>Comment: {{comment.comment}}</p>
+            <p>- {{comment._user.name.first}}</p>
+         </li>
+      </ul>
+      <form ng-submit='addComment(message._id)'>
+         Post a Comment:<p><textarea name="comment" ng-model='message.newComment'></textarea></p>
+         <button type="submit" name="button">Post a Comment</button>
+      </form>
+   </li>
+</ul>

@@ -1,0 +1,22 @@
+{
+  "name": "login_and_reg",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "Spencer Larsen <larsen.spener@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/CodingDojo-MEAN-02-17/SpencerLarsen-Mean",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.3",
+    "angular-route": "^1.6.3",
+    "angular-cookies": "^1.6.3"
+  }
+}
